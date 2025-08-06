@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+input, textarea{
+    outline: none;
+    padding: 5px;
+    color: #000;
+}
+textarea{
+    min-height: 100px;
+}
+button{
+    padding: 10px;
+    border-radius: 7px;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+body{
+    height: 100svh;
+    width: 100svw;
+    background: #333;
+}
+.insert{
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, darkblue, blue);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3px;
+    transform: translateY(-100svh);
+    z-index: 1000;
+}
+.insert.active{
+    transform: translateY(0);
+}
+
+.show{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, darkorange, darkblue);
+    color: #fff;
+    z-index: 500;
+    animation: scale 2s infinite;
+}
+.delete{
+    background: red;
+    color: #fff;
+}
+.delete:hover{
+    background: rgb(255, 60, 60);
+}
+.bio{
+    background: #333;
+    padding: 10px;
+}
+.save{
+    background: linear-gradient(to left, darkgreen, green);
+    color: #fff;
+}
+.update{
+    background: green;
+    color: #fff;
+}
+.show:hover{
+    background: darkgreen;
+    transform: translateY(-2px);
+}
+.users{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.user-item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #555;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+}
+.user-item:hover{
+    box-shadow: 0 0 8px #000;
+    transform: translateY(-2.5px);
+}
+
+.update-div{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+.update-div.affiche{
+    display: flex;
+}
+
+.temp{
+    background: darkred;
+    animation: delete 2s infinite;
+}
+
+.admin{
+    background: darkgreen;
+    animation: grown 2s infinite;
+}
+
+.no-user{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.user-no{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+form{
+    display: flex;
+    width: 100%;
+}
+form button{
+    width: 100%;
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.08);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes grown{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.02);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes delete{
+    0%{
+        transform: rotate(1.5deg);
+    }
+    50%{
+        transform: rotate(-1.5deg);
+    }
+    100%{
+        transform: rotate(1.5deg);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .insert{
+        height: 80%;
+    }
+}
+/* @media screen and (min-width: 600px){
+    .insert{
+        height: 60%;
+    }
+} */
